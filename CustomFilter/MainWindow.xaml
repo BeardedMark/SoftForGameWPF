@@ -1,0 +1,341 @@
+﻿<Window x:Class="CustomFilter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomFilter"
+        mc:Ignorable="d"
+        Title="CustomFilter" Height="825" MinHeight="760" Width="1245" MinWidth="600" Background="#FF191919" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" x:Name="head"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="legionwall.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Grid.Row="0" Height="26" Width="181" Source="CustomFilterTextHeader.png" Margin="0,0,0,15"/>
+        <Label x:Name="DateVersion" Content="Version: 2.09" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0" FontWeight="Normal" Foreground="White" Opacity="0.3"/>
+        <!--<CheckBox x:Name="fullscreen" Opacity="1" VerticalAlignment="Top" HorizontalAlignment="Right" Checked="fullscreen_Checked" Unchecked="fullscreen_Unchecked"/>-->
+
+        <Rectangle Height="1" VerticalAlignment="Bottom" Fill="Black"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition x:Name="rightgrid" Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="226"/>
+                    <RowDefinition />
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="#FF292929" Grid.RowSpan="10"/>
+
+                <StackPanel Margin="10,0,10,0">
+                    <Label Content="Добавить избранное:"/>
+                    <Grid>
+                        <TextBox x:Name="basetype" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" HorizontalAlignment="Left" Width="155" ToolTip="Введите базовый тип предмета, который вы желаете отслеживать в игре"/>
+                        <Button Content="🔎" Width="23" Height="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" ToolTip="Обзор предметов" Click="Button_Click_8"/>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                        <!--<Label Content="Уровень от" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>-->
+                        <CheckBox x:Name="checkfavlevel" Content="Уровень от  " VerticalAlignment="Center"/>
+                        <TextBox x:Name="forevlevelfrom" Width="34" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="1" HorizontalContentAlignment="Center"/>
+                        <Label Content="до" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                        <TextBox x:Name="forevlevelto" Width="34" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="100" HorizontalContentAlignment="Center"/>
+                        <!--<Image Height="10" Width="10" Source="Ico/инфо.png" Margin="5,0,0,0" MouseDown="Image_MouseDown_5" Cursor="Hand"/>-->
+                    </StackPanel>
+                    <RadioButton x:Name="radioany" Content="Без качества (любое)" IsChecked="True"/>
+                    <RadioButton x:Name="radionormal" Content="Обычное качество"/>
+                    <RadioButton x:Name="radiomagic" Content="Магическое качество"/>
+                    <RadioButton x:Name="radiorare" Content="Редкое качество"/>
+                    <RadioButton x:Name="radiouniq" Content="Уникальное качество"/>
+                    <Button Content="Добавить" Height="23" Margin="0,5,0,0" Click="Button_Click_3" ToolTip="Добавить элемент в список избранных"/>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                    <Label Content="Список избранного:"/>
+
+                </StackPanel>
+
+                <ListBox x:Name="favoritelist" Margin="10,0,10,0" Background="#FF191919" Grid.Row="1" BorderBrush="Black" Foreground="#FFA38B63"/>
+                <Button Content="Удалить выбранное" Height="23" Margin="10,0,10,0" Grid.Row="2" Click="Button_Click_4" ToolTip="Удалить выбранный элемент из списка избранных"/>
+                <Button Content="Удалить всё" Height="23" Margin="10,0,10,0" Grid.Row="3" ToolTip="Очищает весь список избранных предметов" Click="Button_Click_10"/>
+                <Button Content="Загрузить базовые" Height="23" Margin="10,0,10,0" Grid.Row="4" ToolTip="Загружает базовые дорогие предметы и предметы для дорогого шансинга в список избранных предметов" Click="Button_Click_9"/>
+
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Rectangle Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10"/>
+                <StackPanel Margin="10,0,10,0">
+                    <Label Content="Глобальные настройки:"/>
+                    <CheckBox x:Name="maxsize" Content="Увеличенная версия" ToolTip="Увеличивает размер иконок до максимального размера"/>
+                    <CheckBox x:Name="shapersound" Content="Озвучка шейпером" IsChecked="True" ToolTip="Выпадающие важные сферы, будут сопровождаться голосовым уведомлением" Padding="4,0,0,0"/>
+                    <CheckBox x:Name="rayshow" Content="Эффект луча" IsChecked="True" ToolTip="Включает или отключает лучи выпадения предметов на экране"/>
+                    <CheckBox x:Name="icoshow" Content="Иконки на миникарте" IsChecked="True" ToolTip="Включает или отключает значки на миникарте у выпавших предметов"/>
+                    <Label x:Name="allvolume" Content="Общая громкость:" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                    <Slider x:Name="allvolumeslider" Maximum="100" TickPlacement="TopLeft" TickFrequency="5" Value="100" Cursor="Hand" IsSnapToTickEnabled="True" ValueChanged="Slider_ValueChanged" ToolTip="Изменить общую громкость выпадения предметов в самом фильтре (не внутриигровая настройка)"/>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,15,0,5"/>
+
+
+                    <Label Content="Настройка качества:"/>
+
+                    <Grid>
+                        <StackPanel>
+                            <Label x:Name="qualityflasks" Content="Качество флаконов:" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                            <Slider x:Name="qualityflasksslider" Maximum="20" TickPlacement="TopLeft" Value="0" Cursor="Hand" IsSnapToTickEnabled="True" ValueChanged="qualityflasksslider_ValueChanged" ToolTip="При продаже флаконов, общее качество которых будет больше или равно 40%, то вы получите Стекольную массу"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockflask" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите любой тип флаконов в основных настройках" Visibility="Hidden"/>
+                    </Grid>
+
+                    <Grid>
+                        <StackPanel>
+                            <Label x:Name="qualitygems" Content="Качество камней:" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                            <Slider x:Name="qualitygemsslider" Maximum="20" TickPlacement="TopLeft" Value="0" Cursor="Hand" IsSnapToTickEnabled="True" ValueChanged="qualitygemsslider_ValueChanged" ToolTip="При продаже камней, общее качество которых будет больше или равно 40%, то вы получите Призму камнереза" Minimum="1"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockgems" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите Камни с качеством в основных настройках" Visibility="Hidden"/>
+                    </Grid>
+
+                    <Grid>
+                        <StackPanel>
+                            <Label x:Name="qualityitems" Content="Качество экипировки:" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                            <Slider x:Name="qualityitemsslider" Maximum="20" TickPlacement="TopLeft" Value="0" Cursor="Hand" IsSnapToTickEnabled="True" ToolTip="При продаже вещей, общее качество которых будет больше или равно 40%, то вы получите либо Точильный камень, либо Деталь доспеха" ValueChanged="qualityitemsslider_ValueChanged" Minimum="1"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockqua" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите экипировку с качеством в основных настройках" Visibility="Hidden"/>
+                    </Grid>
+
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,15,0,5"/>
+
+                    <Label Content="Бижутерия на сеты:"/>
+                    <Grid>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Уровень от" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                                <TextBox x:Name="bijlevelfrom" Width="30" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="60" HorizontalContentAlignment="Center"/>
+                                <Label Content="до" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                                <TextBox x:Name="bijlevelto" Width="30" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="100" HorizontalContentAlignment="Center"/>
+                                <Image Height="10" Width="10" Source="Ico/инфо.png" Margin="5,0,0,0" MouseDown="Image_MouseDown_5" Cursor="Hand"/>
+                            </StackPanel>
+                            <CheckBox x:Name="setsbelts" Content="Пояса" IsChecked="True"/>
+                            <CheckBox x:Name="setsamulets" Content="Амулеты" IsChecked="True"/>
+                            <CheckBox x:Name="setsrings" Content="Кольца" IsChecked="True"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockbij" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите Бижутерию на сеты в основных настройках" Visibility="Hidden"/>
+                    </Grid>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,15,0,5"/>
+
+                    <Label Content="Предметы на сеты:"/>
+                    <Grid>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Уровень от" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                                <TextBox x:Name="itemlevelfrom" Width="30" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="60" HorizontalContentAlignment="Center"/>
+                                <Label Content="до" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                                <TextBox x:Name="itemlevelto" Width="30" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="100" HorizontalContentAlignment="Center"/>
+                                <Image Height="10" Width="10" Source="Ico/инфо.png" Margin="5,0,0,0" MouseDown="Image_MouseDown_5" Cursor="Hand"/>
+                            </StackPanel>
+                            <CheckBox x:Name="setshelmets" Content="Шлемы" IsChecked="True"/>
+                            <CheckBox x:Name="setsarmors" Content="Броня" IsChecked="True"/>
+                            <CheckBox x:Name="setsgloves" Content="Перчатки" IsChecked="True"/>
+                            <CheckBox x:Name="setsboots" Content="Сапоги" IsChecked="True"/>
+                            <CheckBox x:Name="setsweapons" Content="Оружие" IsChecked="True"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockonsets" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите Предметы на сеты в основных настройках" Visibility="Hidden"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition />
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="#FF292929" Grid.Row="0"/>
+                <ScrollViewer Margin="0,30,0,5" Grid.Row="1" x:Name="MyScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                    <WrapPanel Orientation="Vertical" x:Name="wrappanel" />
+                </ScrollViewer>
+                <Rectangle Fill="#FF292929" Grid.Row="1" Margin="0,5,0,5" Height="20" VerticalAlignment="Top"/>
+                <Label Grid.Row="1" Content="Основные настройки:" VerticalAlignment="Top"/>
+                <Rectangle Fill="#FF292929" Grid.Row="2"/>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                        <Grid>
+                            <Ellipse x:Name="money" Height="20" Width="20" Margin="5,0,5,0" Opacity="0.5" Fill="#FFFFD100"/>
+                            <Image Height="20" Width="20" Source="IcoButton/4.png" Margin="5,0,5,0" MouseDown="Image_MouseDown_2" Cursor="Hand" ToolTip="Финансовая поддержка проекта" Opacity="0.5" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+                        </Grid>
+                        <Image Height="20" Width="20" Source="IcoButton/1.png" Margin="5,0,5,0" MouseDown="Image_MouseDown" Cursor="Hand" ToolTip="Информационное окно программы" Opacity="0.5" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+                        <Image Height="20" Width="20" Source="IcoButton/3.png" Margin="5,0,5,0" MouseDown="Image_MouseDown_1" Cursor="Hand" ToolTip="Техническая поддержка, связь с разработчиком" Opacity="0.5" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+                        <Image Height="20" Width="20" Source="IcoButton/5.png" Margin="5,0,5,0" MouseDown="Image_MouseDown_3" Cursor="Hand" ToolTip="Посетить страницу на форуме" Opacity="0.5" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+                        <Image Height="20" Width="20" Source="IcoButton/6.png" Margin="5,0,5,0" MouseDown="Image_MouseDown_4" Cursor="Hand" ToolTip="Оставить отзыв о проекте" Opacity="0.5" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+                        <Image Height="20" Width="20" Source="IcoButton/9.png" Margin="5,0,5,0" MouseDown="Image_MouseDown_6" Cursor="Hand" ToolTip="Перейти в группу ВКонтакте" Opacity="0.5" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+                    </StackPanel>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" Grid.Column="5">
+                        <Button Content="Вкл все галочки" Height="23" Width="110" Margin="5,0,5,0" Click="Button_Click_1" ToolTip="Включить все пункты отображения"/>
+                        <Button Content="Выкл все галочки" Height="23" Width="110" Margin="5,0,5,0" Click="Button_Click_2" ToolTip="Выключить все пункты отображения"/>
+                    </StackPanel>
+
+
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Обзор" Height="23" Margin="10,0,10,0" Click="Button_Click_5" ToolTip="Выбрать папку вручную"/>
+                    <TextBox x:Name="folderbox" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Grid.Column="1" Height="23" ToolTip="Указаный путь для сохранения фильтра"/>
+                    <Button Content="Сбросить" Height="23" Margin="10,0,0,0" Grid.Column="2" Click="Button_Click_6" ToolTip="Сбросить путь до папки на стандартный"/>
+                    <Button Content="Открыть" Height="23" Margin="10,0,10,0" Grid.Column="3" Click="Button_Click_7" ToolTip="Открыть папку с фильтрами по указанному пути"/>
+
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Rectangle Fill="#FF292929" Grid.RowSpan="10"/>
+
+                <StackPanel Margin="10,0,10,0">
+                    <Label Content="Высокоуровневые:"/>
+                    <Grid>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="От" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                                <TextBox x:Name="hightlevel" Width="30" Background="#FF191919" BorderBrush="Black" Foreground="#FFA38B63" Height="23" VerticalAlignment="Top" Text="84" HorizontalContentAlignment="Center"/>
+                                <Label Content="ур. (включительно)" FontSize="12" Foreground="#FFA38B63" FontWeight="Normal"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <Rectangle x:Name="blockhightlevel" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите Высокоуровневые предметы в основных настройках" Visibility="Hidden"/>
+                    </Grid>
+
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,10,0,0"/>
+
+                    <Label Content="Доспехи:"/>
+                    <Grid>
+                        <StackPanel x:Name="armor">
+                            <CheckBox Click="rarhelmets_Click" x:Name="rarhelmets" Content="Шлемы" IsChecked="True"/>
+                            <CheckBox Click="rarhelmets_Click" x:Name="rararmors" Content="Броня" IsChecked="True"/>
+                            <CheckBox Click="rarhelmets_Click" x:Name="rargloves" Content="Перчатки" IsChecked="True"/>
+                            <CheckBox Click="rarhelmets_Click" x:Name="rarboots" Content="Сапоги" IsChecked="True"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockanyarmor" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите предметы любого качества в разделе Оставшиеся предметы или Высокоуровневые предметы" Visibility="Hidden"/>
+                    </Grid>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                    <Label Content="Тип защиты:"/>
+                    <Grid>
+                        <StackPanel x:Name="prot">
+                            <CheckBox Click="protdex_int_MouseDown" x:Name="protstrength" Content="Броня" IsChecked="True"/>
+                            <CheckBox Click="protdex_int_MouseDown" x:Name="protdexterity" Content="Уклонение" IsChecked="True"/>
+                            <CheckBox Click="protdex_int_MouseDown" x:Name="protintelligence" Content="Эн. щит" IsChecked="True"/>
+                            <CheckBox Click="protdex_int_MouseDown" x:Name="protstr_dex" Content="Броня и Уклонение" IsChecked="True"/>
+                            <CheckBox Click="protdex_int_MouseDown" x:Name="protstr_int" Content="Броня и Эн. щит" IsChecked="True"/>
+                            <CheckBox Click="protdex_int_MouseDown" x:Name="protdex_int" Content="Уклонение и Эн. щит" IsChecked="True"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockanyprotection" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите предметы любого качества в разделе Оставшиеся предметы или Высокоуровневые предметы" Visibility="Hidden"/>
+                    </Grid>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,10,0,0"/>
+
+                    <Label Content="Бижутерия:"/>
+                    <Grid>
+                        <StackPanel x:Name="bija">
+                            <CheckBox x:Name="rarbelts" Content="Пояса" IsChecked="True"/>
+                            <CheckBox x:Name="raramulets" Content="Амулеты" IsChecked="True"/>
+                            <CheckBox x:Name="rarrings" Content="Кольца" IsChecked="True"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockanybija" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите предметы любого качества в разделе Оставшиеся предметы или Высокоуровневые предметы" Visibility="Hidden"/>
+                    </Grid>
+                    <Rectangle Height="1" Grid.Column="1" Fill="Black" VerticalAlignment="Center" Margin="0,10,0,0"/>
+
+                    <Label Content="Оружие:"/>
+                    <Grid>
+                        <StackPanel x:Name="weapon">
+                            <CheckBox x:Name="rarclaws" Content="Когти" IsChecked="True"/>
+                            <CheckBox x:Name="rardaggers" Content="Кинжалы" IsChecked="True"/>
+                            <CheckBox x:Name="rarswords" Content="Мечи" IsChecked="True"/>
+                            <CheckBox x:Name="rarsword2h" Content="Меч двуруч." IsChecked="True"/>
+                            <CheckBox x:Name="rarsceptre" Content="Скипетры" IsChecked="True"/>
+                            <CheckBox x:Name="rarmaces" Content="Булавы" IsChecked="True"/>
+                            <CheckBox x:Name="rarmace2h" Content="Булава двуруч." IsChecked="True"/>
+                            <CheckBox x:Name="raraxes" Content="Топоры" IsChecked="True"/>
+                            <CheckBox x:Name="raraxe2h" Content="Топор двуруч." IsChecked="True"/>
+                            <CheckBox x:Name="rarstaves" Content="Посохи" IsChecked="True"/>
+                            <CheckBox x:Name="rarwands" Content="Жезлы" IsChecked="True"/>
+                            <CheckBox x:Name="rarshields" Content="Щиты" IsChecked="True"/>
+                            <CheckBox x:Name="rarbows" Content="Луки" IsChecked="True"/>
+                            <CheckBox x:Name="rarquivers" Content="Колчаны" IsChecked="True"/>
+                        </StackPanel>
+                        <Rectangle x:Name="blockanyweapon" Fill="#FF292929" Grid.ColumnSpan="1" Grid.Column="10" Opacity="0.9" ToolTip="Что бы активировать эти настройки, включите предметы любого качества в разделе Оставшиеся предметы или Высокоуровневые предметы" Visibility="Hidden"/>
+                    </Grid>
+
+                </StackPanel>
+                <Button x:Name="createfilter" Content="Сохранить фильтр" Height="23" Margin="10,0,10,0" Grid.Row="3" Click="Button_Click" LostFocus="createfilter_LostFocus" ToolTip="Применить все настройки и сохранить фильтр"/>
+            </Grid>
+        </Grid>
+        <CheckBox x:Name="fullscreen" Opacity="0.3" Content="Max" Checked="fullscreen_Checked" Unchecked="fullscreen_Unchecked" ToolTip="Увеличивает шапку в программе" Margin="0,3,1057,52"/>
+
+
+    </Grid>
+
+    <Window.Resources>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#A38B63"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="#634928"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Foreground" Value="#A38B63"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Background" Value="#634928"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="#4d4a45"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid ClipToBounds="True">
+                            <Rectangle x:Name="innerRectangle" Stroke="Transparent" StrokeThickness="2" Fill="#FF131313" />
+                            <Border BorderThickness="1" BorderBrush="Black"/>
+                            <DockPanel Name="myContentPresenterDockPanel">
+                                <ContentPresenter x:Name="myContentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="#A38B63" />
+                            </DockPanel>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Opacity" Value="1"/>
+        </Style>
+        <Style TargetType="ToolTip">
+            <Setter Property="Foreground" Value="#FFA38B63"/>
+            <Setter Property="Background" Value="#FF3C3C3C"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+            <Setter Property="ToolTipService.ShowDuration" Value="0"/>
+            <Setter Property="ToolTipService.BetweenShowDelay" Value="0"/>
+        </Style>
+    </Window.Resources>
+</Window>

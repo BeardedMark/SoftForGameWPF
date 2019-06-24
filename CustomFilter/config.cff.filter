@@ -1,0 +1,903 @@
+﻿# Важные предметы:
+
+# Уникальные вещи
+
+# Уникальные предметы имеют такие же базовые показатели, как и обычные предметы того же типа, но также имеют уникальные имена, внешний вид и список свойств, многие из которых нельзя получить на магических и редких предметах. Уникальные предметы обычно слабее высокоуровневых редких предметов, но зачастую привносят новый игровой функционал, предлагая игрокам возможность изменять свой привычный геймплей и строить новые интересные билды на их основе.
+Show
+    Rarity = Unique
+    SetTextColor 180 96 0
+    SetBackgroundColor 0 0 0
+    SetBorderColor 180 96 0 150
+    SetFontSize 37
+    PlayAlertSound 3 300
+
+# Многолинковые вещи
+
+# Предметы, имеющие на себе 5 или 6 связанных между собой ячеек любых цветов. Редкость предметов может быть любой. Уникальные предметы пож это свойство не оппадают.
+Show
+    LinkedSockets >= 5
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 136 0
+    SetBorderColor 0 0 0 150
+    SetFontSize 45
+    PlayAlertSound 1 300
+
+# Избранные вещи
+
+# Выбранные вами предметы, которые будут отображатся независимо от других условий в фильтре.
+Show
+    Rarity = Normal
+    BaseType "Bone Helmet" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Two-Toned Boots" "Prismatic Ring" "Steel Ring" "Opal Ring" "Crystal Belt" "Vanguard Belt" "Bone Armour" "Astral Plate" "Occultist's Vestment" "Citrine Amulet" "Marble Amulet" "Blue Pearl Amulet" "Agate Amulet" "Turquoise Amulet" "Onyx Amulet" "Diamond Ring" "Reinforced Greaves" "Two-Stone Ring" "Leather Belt" "Sorcerer Boots" "Gold Amulet" "Glorious Plate" "Prophecy Wand"
+    SetTextColor 255 255 255
+    SetBackgroundColor 128 128 128
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 13 300
+
+# Предметы лиг:
+
+# Предметы лиги Война за атлас
+
+# Измененные предметы, которые находятся под влиянием Шейпера или Елдера. Такие предметы обычно несут в себе дополнительные свойства, которые нельзя получить на предметах, найденых обычным путем.
+Show
+    ShaperItem True
+    SetTextColor 255 165 0
+    SetBackgroundColor 23 61 110
+    SetBorderColor 255 165 0 150
+    SetFontSize 37
+    PlayAlertSound 16 300
+
+Show
+    ElderItem True
+    SetTextColor 255 165 0
+    SetBackgroundColor 23 61 110
+    SetBorderColor 255 165 0 150
+    SetFontSize 37
+    PlayAlertSound 16 300
+
+# Предметы лиги Бездна
+
+# Предметы, которые выпадают при открытии сундука разлома. В эти предметы входят самоцветы бездны и пояса бездны.
+Show
+    BaseType "Vise"
+    SetTextColor 205 255 205
+    SetBackgroundColor 70 74 84
+    SetBorderColor 184 255 184 150
+    SetFontSize 35
+    PlayAlertSound 16 300
+
+Show
+    Class "Abyss Jewel"
+    SetTextColor 205 255 205
+    SetBackgroundColor 70 74 84
+    SetBorderColor 205 255 205 150
+    SetFontSize 35
+    PlayAlertSound 16 300
+
+# Предметы лиги Бестиарий
+
+# Отображение сетей для поимки животных.
+Show
+    BaseType "Thaumaturgical Net" "Necromancy Net"
+    SetTextColor 170 158 130
+    SetBackgroundColor 74 55 26
+    SetBorderColor 255 228 167
+    SetFontSize 35
+
+Show
+    BaseType "Simple Rope Net" "Reinforced Rope Net" "Strong Rope Net" "Simple Iron Net" "Reinforced Iron Net" "Strong Iron Net" "Simple Steel Net" "Reinforced Steel Net" "Strong Steel Net"
+    SetTextColor 170 158 130
+    SetBackgroundColor 74 55 26
+    SetBorderColor 255 228 167 150
+    SetFontSize 35
+
+# Предметы лиги Вмешательство
+
+# Отображение камней переходов, для открытия дверей между комнатами во время зачистки и отображение бочек со взрывчаткой, которые помогают взорвать проход, если до этого это место небыло открыто.
+Show
+    Class "Incursion Item"
+    BaseType "Stone of Passage" "Flashpowder Keg"
+    SetTextColor 255 184 0
+    SetBackgroundColor 77 51 41
+    SetBorderColor 255 147 0 150
+    SetFontSize 45
+    PlayAlertSound 6 300
+
+# Фиалы лиги Вмешательство
+
+# Фиалы - это предметы, которые используются на алтаре жертвоприношения в одной из комнат в храме. Один такой фиал позволяет изменить предметы соответсвенно предмету и фиалу.
+Show
+    BaseType "Vial of Dominance" "Vial of Summoning" "Vial of Awakening" "Vial of the Ritual" "Vial of Fate" "Vial of Consequence" "Vial of the Ghost" "Vial of Transcendence" "Vial of Sacrifice"
+    SetTextColor 255 184 0
+    SetBackgroundColor 77 51 41
+    SetBorderColor 255 147 0 150
+    SetFontSize 45
+    PlayAlertSound 6 300
+
+# Валюта:
+
+# Высшие сферы
+
+# В данные сферы входят Сферы Возвышения, Зеркало Каландры.
+Show
+    BaseType "Exalted Orb" "Exalted Shard"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 0 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShExalted 300
+
+Show
+    BaseType "Mirror of Kalandra" "Mirror Shard"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 0 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShMirror 300
+
+# Важные сферы
+
+# В данные сферы входят Сфера Хаоса, Благодатная Сфера, Божественная Сфера, Сфера Царей, Сфера Ваал, Сфера Алхимии, Сфера Соединения, Сфера Вечного.
+Show
+    BaseType "Chaos Orb" "Chaos Shard"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShChaos 300
+
+Show
+    BaseType "Blessed Orb"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShBlessed 300
+
+Show
+    BaseType "Divine Orb"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShDivine 300
+
+Show
+    BaseType "Regal Orb" "Regal Shard"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShRegal 300
+
+Show
+    BaseType "Vaal Orb"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShVaal 300
+
+Show
+    BaseType "Orb of Alchemy" "Alchemy Shard"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShAlchemy 300
+
+Show
+    BaseType "Orb of Fusing"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShFusing 300
+
+Show
+    BaseType "Eternal Orb"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShGeneral 300
+
+Show
+    BaseType "Bestiary Orb"
+    SetTextColor 0 0 0
+    SetBackgroundColor 255 200 0
+    SetBorderColor 0 0 0
+    SetFontSize 45
+    PlayAlertSound ShGeneral 300
+
+# Нужные сферы
+
+# Коментарий.
+Show
+    BaseType "Orb of Alteration" "Orb of Fusing" "Orb of Alchemy" "Gemcutter's Prism" "Chromatic Orb" "Jeweller's Orb" "Orb of Chance" "Cartographer's Chisel" "Orb of Scouring" "Blessed Orb" "Orb of Regret" "Vaal Orb" "Orb of Annulment" "Orb of Binding" "Ancient Orb" "Glassblower's Bauble" "Perandus Coin" "Silver Coin" "Annulment Shard" "Binding Shard" "Apprentice Cartographer's Sextant" "Journeyman Cartographer's Sextant" "Master Cartographer's Sextant" "Alchemy Shard" "Alteration Shard" "Imprinted Bestiary Orb"
+    SetTextColor 255 165 0
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 200 0
+    SetFontSize 40
+    PlayAlertSound 11 300
+
+# Полезные сферы
+
+# Коментарий.
+Show
+    BaseType "Blacksmith's Whetstone" "Armourer's Scrap" "Orb of Transmutation" "Transmutation Shard" "Alteration Shard" "Annulment Shard" "Orb of Augmentation" "Exalted Orb" "Exalted Shard" "Regal Shard" "Alchemy Shard" "Chaos Shard" "Divine Orb" "Jeweller's Orb" "Orb of Fusing" "Chromatic Orb" "Orb of Scouring" "Orb of Regret" "Vaal Orb" "Silver Coin" "Apprentice Cartographer's Sextant" "Journeyman Cartographer's Sextant" "Master Cartographer's Sextant" "Engineer's Shard" "Binding Shard" "Horizon Shard" "Harbinger's Shard" "Ancient Shard" "Engineer's Orb" "Harbinger's Orb" "Orb of Binding" "Orb of Horizons" "Orb of Augmentation"
+    SetTextColor 150 150 150
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 200 0
+    SetFontSize 40
+
+# Свитки:
+
+# Свитки мудрости
+
+# Свитки мудрости служат для распознования неопознаных предметов.
+Show
+    BaseType "Scroll of Wisdom"
+    SetTextColor 163 141 109
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 200 0
+    SetFontSize 30
+
+# Свитки портала
+
+# Свиток портала создает портал в лагерь того акта, в котором вы находитесь. Если вы находитесь на карте, то портал будет открыт в ваше убежище или в лабораторию вечного.
+Show
+    BaseType "Portal Scroll"
+    SetTextColor 54 100 146
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 200 0
+    SetFontSize 30
+
+# Камни умений:
+
+# Камни важные
+
+# В этот раздел входят камни которые нельзя купить у торговцев. А именно - усилители, камень порталов, камень подрыва мин и камень урона от хаоса.
+Show
+    Class "Support Skill Gems" "Active Skill Gems"
+    BaseType "Portal" "Enlighten Support" "Empower Support" "Enhance Support" "Added Chaos Damage Support"
+    SetTextColor 0 222 210
+    SetBackgroundColor 19 105 100
+    SetBorderColor 255 255 119
+    SetFontSize 40
+    PlayAlertSound 14 300
+
+# Оскверненые камни
+
+# Камни умений ваал или обычные камни, подвергнутые осквернению.
+Show
+    Corrupted True
+    Class "Support Skill Gems" "Active Skill Gems"
+    SetTextColor 0 222 210
+    SetBackgroundColor 19 105 100
+    SetBorderColor 255 0 0
+    SetFontSize 40
+    PlayAlertSound 14 300
+
+# Камни с качеством
+
+# Камни, которые имеют качество. качество камня повышает его характеристики и дает дополнительные возможности к способности.
+Show
+    Quality >= 1
+    Class "Support Skill Gems" "Active Skill Gems"
+    SetTextColor 0 222 210
+    SetBackgroundColor 19 105 100
+    SetBorderColor 0 222 210 150
+    SetFontSize 30
+    PlayAlertSound 14 300
+
+# Камни без качества
+
+# обычные камни которые можно купить у торговцев и которые часто выпадают с монстров во время прохождения.
+Show
+    Class "Support Skill Gems" "Active Skill Gems"
+    SetTextColor 0 222 210
+    SetBackgroundColor 11 61 58
+    SetBorderColor 255 255 255 0
+    SetFontSize 30
+    PlayAlertSound 14 300
+
+# Разное:
+
+# Квестовые предметы
+
+# Предметы, которые необходимы для сдачи задания или для прохождения дальше по сюжетной линии. Но в этот раздел еще входит Божественный сосуд, который позволяет улучшить душу в пантеоне, предметы лабиринта и пророчества.
+Show
+    Class "Map Fragments"
+    BaseType "Divine Vessel"
+    SetTextColor 255 255 0
+    SetBackgroundColor 122 122 0
+    SetBorderColor 255 255 0 150
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show
+    Class "Quest Items"
+    SetTextColor 255 255 0
+    SetBackgroundColor 122 122 0
+    SetBorderColor 255 255 0 150
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show
+    Class "Labyrinth Trinket" "Labyrinth Item"
+    SetTextColor 255 255 0
+    SetBackgroundColor 122 122 0
+    SetBorderColor 255 255 0 150
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show
+    Height = 1
+    Width = 1
+    BaseType "Prophecy"
+    SetTextColor 255 255 0
+    SetBackgroundColor 122 122 0
+    SetBorderColor 255 255 0 150
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+# Гадальные карты
+
+# Отображение выпавших гадальных карт и колод, при обмене которых вы получаете проедметы у Тасуни или Навалли если она присутствует в вашем убежище.
+Show
+    Class "Divination Card"
+    SetTextColor 69 163 255
+    SetBackgroundColor 0 38 89
+    SetBorderColor 30 144 255 150
+    SetFontSize 40
+    PlayAlertSound 8 300
+
+Show
+    BaseType "Stacked Deck"
+    SetTextColor 69 163 255
+    SetBackgroundColor 0 38 89
+    SetBorderColor 30 144 255 150
+    SetFontSize 40
+    PlayAlertSound 8 300
+
+# Души и разломы
+
+# отображение душ (ессенций) которые выпадают из "замороженых" монстров, которых можно встретить по мере прохождения. И отображение предметов разлома (осколки и кольцо разлома).
+Show
+    BaseType "Splinter of Chayula" "Splinter of Esh" "Splinter of Tul" "Splinter of Uul-Netol" "Splinter of Xoph" "Blessing of Chayula" "Blessing of Esh" "Blessing of Tul" "Blessing of Uul-Netol" "Blessing of Xoph"
+    SetTextColor 255 0 0
+    SetBackgroundColor 0 0 0
+    SetBorderColor 210 0 220
+    SetFontSize 40
+    PlayAlertSound 4 300
+
+Show
+    Class "Rings"
+    BaseType "Breach Ring"
+    SetTextColor 255 0 0
+    SetBackgroundColor 0 0 0
+    SetBorderColor 210 0 220
+    SetFontSize 40
+    PlayAlertSound 4 300
+
+Show
+    BaseType "Essence" "Remnant of Corruption"
+    SetTextColor 255 0 0
+    SetBackgroundColor 0 0 0
+    SetBorderColor 210 0 220
+    SetFontSize 40
+    PlayAlertSound 4 300
+
+# Самоцветы:
+
+# Самоцветы редкие
+
+# Самоцветы, качество которых - Rare (желтые). Обычно содержат в себе дополнительные и усиленные свойства и могут быть изменены только сферой хаоса или сферо очищения.
+Show
+    Rarity = Rare
+    Class "Jewel"
+    SetTextColor 210 0 220
+    SetBackgroundColor 74 0 160
+    SetBorderColor 255 215 0
+    SetFontSize 35
+
+# Самоцветы магические
+
+# Самоцветы, качество которых - Magic (синие). Содержат в себе мало свойств и могут быть изменены сферой перемен, для достижения более хороших характеристик.
+Show
+    Rarity <= Magic
+    Class "Jewel"
+    SetTextColor 210 0 220
+    SetBackgroundColor 74 0 160
+    SetBorderColor 0 0 0
+    SetFontSize 35
+
+# Карты картоходца:
+
+# Фрагменты карт
+
+# В данный раздел входят Части "жертв" для открытия прохода к Азири, убер Азири и Шейперу. Так же отображение подношений для открытие прохода в убер лабиринт.
+Show
+    Class "Map Fragments"
+    SetTextColor 255 0 0
+    SetBackgroundColor 77 0 0
+    SetBorderColor 255 0 0 150
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+Show
+    Class "Labyrinth Map Item"
+    SetTextColor 255 0 0
+    SetBackgroundColor 77 0 0
+    SetBorderColor 255 0 0 150
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+# Желтые карты
+
+# Карты желотого цвета. Уровень карт от 6 до 10.
+Show
+    ShapedMap True
+    DropLevel <= 72
+    Class "Maps"
+    SetTextColor 255 200 0
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+Show
+    DropLevel >= 73
+    DropLevel <= 77
+    Class "Maps"
+    SetTextColor 255 200 0
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+# Красные карты
+
+# Карты красного цвета. Уровент этих карт от 10 до 15.
+Show
+    ShapedMap True
+    DropLevel >= 73
+    DropLevel <= 77
+    Class "Maps"
+    SetTextColor 255 0 0
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+Show
+    DropLevel >= 78
+    DropLevel <= 82
+    Class "Maps"
+    SetTextColor 255 0 0
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+# Высшие карты
+
+# Карты фиолетового цвета. Уровень карт только 16.
+Show
+    ShapedMap True
+    DropLevel >= 78
+    DropLevel <= 82
+    Class "Maps"
+    SetTextColor 243 0 255
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+Show
+    DropLevel >= 83
+    Class "Maps"
+    SetTextColor 243 0 255
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+# Белые карты
+
+# Карты белого цвета. уровень карт от 1 до 5.
+Show
+    DropLevel <= 72
+    Class "Maps"
+    SetTextColor 255 255 255
+    SetBackgroundColor 79 92 117
+    SetBorderColor 0 0 0
+    SetFontSize 35
+    PlayAlertSound 15 300
+
+# На продажу:
+
+# Продажа 6-ти сокет
+
+# Предметы, которые содержат в себе 6 ячеек с не более чем 4 связаными ячейками. Такие предметы можно продать торговцу и получить за нее 7 сфер златокузнеца.
+Show
+    Sockets = 6
+    Rarity >= Normal
+    SetTextColor 0 255 71
+    SetBackgroundColor 0 69 0
+    SetBorderColor 50 230 100 150
+    SetFontSize 35
+    PlayAlertSound 13 300
+
+# Продажа хроматик
+
+# Предметы для продажи, в которых присутствует минимум 3 ячейки разных сцетов, и которые все три соеденены между собой.
+Show
+    LinkedSockets >= 3
+    SocketGroup "RGB"
+    SetTextColor 229 255 0
+    SetBackgroundColor 0 69 0
+    SetBorderColor 50 230 100 150
+    SetFontSize 30
+
+# Продажа молотки
+
+# Молотки служат для продажи за резец картографа. Для соблюдения условий, нужно улучшить один молоток любого каества до 20% качества и продать его вместе с любой картой для машины картоходца. В замен вы получите 1 резец картографа.
+Show
+    Rarity = Normal
+    BaseType "Rock Breaker" "Stone Hammer" "Gavel"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 69 0
+    SetBorderColor 50 230 100 150
+    SetFontSize 30
+    PlayAlertSound 13 300
+
+# Вещи для сетов:
+
+# Бижутерия на сеты
+
+# Отображение поясов, амулетов и колец для сетов на продажу за сферу хаоса. Отображаются только неопознаные предметы редкого качества.
+Show
+    Identified False
+    ItemLevel >= 60
+    ItemLevel <= 100
+    Rarity = Rare
+    Class "Rings" "Amulets" "Belts"
+    SetTextColor 255 215 0
+    SetBackgroundColor 117 99 0
+    SetBorderColor 255 215 0
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+# Предметы на сеты
+
+# отображение всей брони и двуручного оружия для сетов на продажу за сферу хаоса. отображаются только неопознаные предметы редкого качества.
+Show
+    Identified False
+    ItemLevel >= 60
+    ItemLevel <= 74
+    Rarity = Rare
+    Class "Helmets" "Body Armours" "Gloves" "Boots" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords"
+    SetTextColor 184 144 0
+    SetBackgroundColor 59 46 0
+    SetBorderColor 255 255 255 0
+    SetFontSize 30
+
+# Полезные предметы:
+
+# Высокоуровневые предметы
+
+# Предметы, уровень которых начинается от 80. На таких предметов самый высокий уровень характеристик.
+Show
+    ItemLevel >= 80
+    Rarity = Rare
+    SetTextColor 184 144 0
+    SetBackgroundColor 59 46 0
+    SetBorderColor 255 215 0 150
+    SetFontSize 30
+
+# Стартовые вещи
+
+# Предметы для старта персонажа, обычно полезно для старта лиги или нового персонажа. Предметы обычного качества отображаются до 5 уровня, предметы магического качества отображаются до 10 уровня, предметы редкого качества отображаются до 15 уровня.
+Show
+    ItemLevel <= 15
+    Rarity = Rare
+    SetTextColor 255 255 119
+    SetBackgroundColor 48 48 48
+    SetBorderColor 0 0 0
+    SetFontSize 32
+
+Show
+    ItemLevel <= 10
+    Rarity = Magic
+    SetTextColor 136 136 255
+    SetBackgroundColor 48 48 48
+    SetBorderColor 0 0 0
+    SetFontSize 32
+
+Show
+    ItemLevel <= 5
+    Rarity = Normal
+    SetTextColor 200 200 200
+    SetBackgroundColor 48 48 48
+    SetBorderColor 0 0 0
+    SetFontSize 32
+
+# Вещи с 4 связями
+
+# Предметы помогающие экономить сферы златокузнеца и сферы соединения. В этом разделе отображаются все предметы, которые содержат в себе 4 связанные между собой ячейки.
+Show
+    LinkedSockets = 4
+    SetTextColor 170 158 130
+    SetBackgroundColor 107 99 81
+    SetBorderColor 170 158 130
+    SetFontSize 30
+
+# Флаконы:
+
+# Флаконы жизни
+
+# Флаконы пополняющие здоровье.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    Class "Life Flasks"
+    SetTextColor 255 129 129
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 129 129 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Флаконы маны
+
+# Флаконы пополняющие ману.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    Class "Mana Flasks"
+    SetTextColor 0 175 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 0 175 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Флаконы равновесия
+
+# Флаконы пополняющие здоровье и ману.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    Class "Hybrid Flasks"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Базальтовые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Basalt Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Аквамариновые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Aquamarine Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Стибнитовые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Stibnite Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Серные флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Sulphur Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Серебряные флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Silver Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Висмутовые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Bismuth Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Ртутные флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Quicksilver Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Рубиновые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Ruby Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Сапфировые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Sapphire Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Топазовые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Topaz Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Аметистовые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Amethyst Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Гранитные флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Granite Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Алмазные флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Diamond Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Нефритовые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Jade Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Кварцевые флаконы
+
+# Коментарий.
+Show
+    Quality >= 0
+    Rarity <= Magic
+    BaseType "Quartz Flask"
+    SetTextColor 255 255 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 255 255 150
+    SetFontSize 30
+    PlayAlertSound 12 300
+
+# Оставшиеся предметы:
+
+# Вещи редкого качества
+
+# предметы редкого качетсва, которые содержат в себе дополнительные характеристики и более высокие статистики.
+Show
+    Rarity = Rare
+    SetTextColor 255 255 119
+    SetBackgroundColor 48 48 48
+    SetBorderColor 0 0 0
+    SetFontSize 32
+
+# Вещи магического качества
+
+# Предметы магического качества, которые содержат в себе мало дополнительных характеристик.
+Show
+    Rarity = Magic
+    SetTextColor 136 136 255
+    SetBackgroundColor 48 48 48
+    SetBorderColor 0 0 0
+    SetFontSize 32
+
+# Вещи нормального качества
+
+# предметы обычногок ачества. которые не содержат в себе дополнительных характеристик, а имеют только собственные свойства.
+Show
+    Rarity = Normal
+    SetTextColor 200 200 200
+    SetBackgroundColor 48 48 48
+    SetBorderColor 0 0 0
+    SetFontSize 32
